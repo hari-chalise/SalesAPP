@@ -1,0 +1,46 @@
+<form [formGroup]="customerForm" (ngSubmit)="saveChanges()">
+    <div class="mat-dialog-title">
+        <div>
+            <h5>{{data?.id > 0 ? 'Edit Customer Form': 'Add New Customer'}} </h5>
+        </div>
+        <!-- <div class="close-button">
+     <button mat-button  color = "warn" [mat-dialog-close] cdkFocusInitial>close</button>
+  </div> -->
+    </div>
+    <mat-divider></mat-divider>
+    <div mat-dialog-content>
+        <div class="row mt-2">
+            <div class="col-md-4">
+                <mat-form-field appearance="outline">
+                    <mat-label>Customer Id</mat-label>
+                    <input matInput placeholder="Customer Id" formControlName="customerId" class="full-width" required/>
+                </mat-form-field>
+            </div>
+            <div class="col-md-4">
+                <mat-form-field appearance="outline">
+                    <mat-label>Customer Name</mat-label>
+                    <input matInput placeholder="Customer Name" formControlName="customerName" class="full-width" required/>
+                </mat-form-field>
+            </div>
+            <div class="col-md-4">
+                <mat-form-field appearance="outline">
+                    <mat-label>customer Address</mat-label>
+                    <input matInput placeholder="customerAddress" formControlName="customerAddress" class="full-width" />
+                </mat-form-field>
+            </div>
+            <div class="col-md-4">
+                <mat-form-field appearance="outline">
+                    <mat-label>Email Address</mat-label>
+                    <input matInput placeholder="Email Address" formControlName="emailAddress" class="full-width" />
+                </mat-form-field>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div mat-dialog-actions class="mat-dialog-actions">
+        <button mat-button color="primary">Save changes</button>
+        <button mat-button color="warn" [mat-dialog-close] cdkFocusInitial>Cancel</button>
+    </div>
+</form>

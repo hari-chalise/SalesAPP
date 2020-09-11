@@ -1,0 +1,47 @@
+<div class="container mb-15">
+    <div>
+        <!-- <mat-toolbar> -->
+        <span>Customers List</span>
+        <button mat-flat-button color="primary" (click)="onAction(0)" class="action-button">Add</button>
+        <!-- </mat-toolbar> -->
+    </div>
+    <div class="row">
+        <div class="col-md-4 mt-4" *ngFor="let c of customers">
+            <mat-card class="example-card">
+                <mat-card-header>
+                    <!-- <div mat-card-avatar class="example-header-image"></div> -->
+                    <mat-card-title>{{c.customerName}}</mat-card-title>
+                </mat-card-header>
+                <mat-divider></mat-divider>
+                <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
+                <mat-card-content>
+                    <div class="row">
+                        <div class="col-sm-5 title">Customers Id:</div>
+                        <div class="col-sm-7">{{c.customerId}}</div>
+                    </div>
+                    <mat-divider></mat-divider>
+                    <div class="row">
+                        <div class="col-sm-5 title">Customers Name:</div>
+                        <div class="col-sm-7">{{c.customerName}}</div>
+                    </div>
+                    <mat-divider></mat-divider>
+                    <div class="row">
+                        <div class="col-sm-5 title">Customer Address:</div>
+                        <div class="col-sm-7">{{c.customerAddress}}</div>
+                    </div>
+                    <mat-divider></mat-divider>
+                    <div class="row">
+                        <div class="col-sm-5 title"> Email Address:</div>
+                        <div class="col-sm-7">{{c.emailAddress}}</div>
+                    </div>
+                    <mat-divider></mat-divider>
+                </mat-card-content>
+                <div class="mat-card-actions">
+                    <button mat-flat-button color="primary" (click)="onAction(p.id)">Edit</button>
+                    <button mat-flat-button color="warn" (click)="onDelete(p.id)" class="action-button">Delete</button>
+                </div>
+            </mat-card>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,55 @@
+<div class="container mb-15">
+    <div>
+        <!-- <mat-toolbar> -->
+        <span>Sales Transaction List</span>
+        <button mat-flat-button color="primary" (click)="onAction(0)" class="action-button">Add</button>
+        <!-- </mat-toolbar> -->
+    </div>
+    <div class="row">
+        <div class="col-md-4 mt-4" *ngFor="let s of sales">
+            <mat-card class="example-card">
+                <mat-card-header>
+                    <mat-card-title>Sales Transaction</mat-card-title>
+                </mat-card-header>
+                <mat-divider></mat-divider>
+                <mat-card-content>
+                    <div class="row">
+                        <div class="col-sm-5  title">Sale Id:</div>
+                        <div class="col-sm-7">{{s.saleId}}</div>
+                    </div>
+                    <mat-divider></mat-divider>
+                    <div class="row">
+                        <div class="col-sm-5 title">Product Id:</div>
+                        <div class="col-sm-7">{{s.productId}}</div>
+                    </div>
+                    <mat-divider></mat-divider>
+                    <div class="row">
+                        <div class="col-sm-5 title">Customer Id:</div>
+                        <div class="col-sm-7">{{s.customerId}}</div>
+                    </div>
+                    <mat-divider></mat-divider>
+                    <div class="row">
+                        <div class="col-sm-5 title"> Actual Saling Price:</div>
+                        <div class="col-sm-7">{{s.actualSalingPrice}}</div>
+                    </div>
+                    <mat-divider></mat-divider>
+                    <div class="row">
+                        <div class="col-sm-5 title">Sale Date:</div>
+                        <div class="col-sm-7">{{s.saleDate}}</div>
+                    </div>
+                    <mat-divider></mat-divider>
+                    <div class="row">
+                        <div class="col-sm-5 title">Sale Time:</div>
+                        <div class="col-sm-7">{{s.saleTime}}</div>
+                    </div>
+                    <mat-divider></mat-divider>
+                </mat-card-content>
+                <div class="mat-card-actions">
+                    <button mat-flat-button color="primary" (click)="onAction(s.id)">Edit</button>
+                    <button mat-flat-button color="warn" (click)="onDelete(s.id)" class="action-button">Delete</button>
+                </div>
+            </mat-card>
+
+        </div>
+    </div>
+</div>
